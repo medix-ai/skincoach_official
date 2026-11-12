@@ -96,7 +96,9 @@ OG 이미지만 다시 만들 때: `python3 tools/build_assets.py og` (`tools/og
 | App Store 링크 | '출시 준비 중' 표시 | `site.js` `appStoreUrl` |
 | 인스타그램 계정 | 링크 숨김 | `site.js` `instagramUrl` |
 | 운영 주체·사업자 정보 | 'MediX'로 표기 | `index.html` 푸터 |
-| 공식 문의 이메일 | `skincoach.support@gmail.com` (앱 지원 페이지 기준). 개인정보 처리방침은 `medix.ai.team@gmail.com` 사용 중 → 하나로 통일 필요 | `index.html` 푸터 |
+
+공식 문의 이메일은 `medix.ai.team@gmail.com` 입니다 (푸터, 개인정보 처리방침, 이용약관 공통). 바꿀 때는 `index.html` 푸터와 `tools/sync_legal.py`의 `CONTACT_EMAIL`을 함께 수정하세요.
+
 | FAQ: 가격·안드로이드·미등록 제품·광고 여부 | 답이 정해지지 않아 페이지에서 뺌 | `index.html` FAQ 끝 주석 |
 | 올리브영 명칭 사용 | 사실 설명('올리브영 판매 제품 3,100여 개')으로만 사용 | `index.html` 05.6, FAQ Q.02 |
 | 개인정보 처리방침·약관 | 앱 저장소 v1.2 원문 게시. 리전·업체 등 실제와 일치하는지 법무 확인 필요 | 원문 수정 후 `sync_legal.py` |

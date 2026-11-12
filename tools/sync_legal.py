@@ -15,6 +15,10 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "..", "skincoach_app", "docs")
 
+# 공식 문의 이메일. 원문에 예전 지원 주소가 있으면 이 주소로 바꿔서 게시합니다.
+CONTACT_EMAIL = "medix.ai.team@gmail.com"
+OLD_EMAILS = ["skincoach.support@gmail.com"]
+
 PAGES = [
     ("privacy.html", "privacy", "개인정보 처리방침"),
     ("terms.html", "terms", "서비스 이용약관"),
@@ -85,6 +89,8 @@ def extract(raw):
     body = body[: body.rindex("</div>")]  # container 닫는 태그 제거
     body = body.replace('href="index.html"', 'href="../"')
     body = body.replace('href="privacy.html"', 'href="../privacy/"').replace('href="terms.html"', 'href="../terms/"')
+    for old in OLD_EMAILS:
+        body = body.replace(old, CONTACT_EMAIL)
     return meta, body.rstrip()
 
 
