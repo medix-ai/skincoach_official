@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://medix-ai.github.io/skincoach_official/sitemap.xml

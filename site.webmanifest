@@ -1,0 +1,13 @@
+{
+  "name": "스킨코치",
+  "short_name": "스킨코치",
+  "description": "내가 가진 스킨케어 제품으로 더 똑똑하게",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#FFFFFF",
+  "theme_color": "#EAF7F1",
+  "icons": [
+    { "src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

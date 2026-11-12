@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>스킨코치 - 내 피부의 AI 코치</title>
+  <meta name="description" content="내가 가진 스킨케어 제품으로 더 똑똑하게. 보유 제품 기반 루틴 생성, 성분 충돌 체크, 매일 피부 체크인까지. 스킨코치 앱.">
+  <meta name="keywords" content="스킨케어 루틴, 성분 체크, 화장품 성분 충돌, 스킨케어 앱, 루틴 추천">
+  <meta name="theme-color" content="#EAF7F1">
+  <meta name="color-scheme" content="light">
+
+  <!-- 도메인 변경 시: 아래 https://medix-ai.github.io/skincoach_official/ 을 새 주소로 바꾸세요 (README 참고) -->
+  <link rel="canonical" href="https://medix-ai.github.io/skincoach_official/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="스킨코치">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="스킨코치 - 내 피부의 AI 코치">
+  <meta property="og:description" content="내가 가진 스킨케어 제품으로 더 똑똑하게. 보유 제품 기반 루틴 생성, 성분 충돌 체크, 매일 피부 체크인까지.">
+  <meta property="og:url" content="https://medix-ai.github.io/skincoach_official/">
+  <meta property="og:image" content="https://medix-ai.github.io/skincoach_official/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="스킨코치 - 내 피부의 AI 코치. 내가 가진 스킨케어 제품으로 더 똑똑하게.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- App Store 출시 후 주석 해제: 아이폰 사파리 상단 스마트 앱 배너
+  <meta name="apple-itunes-app" content="app-id=앱ID숫자">
+  -->
+
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="preload" as="image" href="assets/img/shots/hero-home.webp" type="image/webp">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/site.js" defer></script>
+
+  <!-- 분석 도구(GA4 등) 확정 후 여기에 스니펫 추가. 이벤트는 assets/js/site.js 의 track() 이 보냅니다. -->
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+
+  <div class="masthead">
+    <div class="wrap masthead__in">
+      <span class="masthead__side">No.01 — 화장대 편</span>
+      <span>내 피부의 AI 코치, 스킨코치.</span>
+      <span class="masthead__side">iOS · 2026</span>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="#top" aria-label="스킨코치 처음으로">
+        <img src="assets/img/logo-s.png" alt="" width="83" height="120">
+        <span class="brand__ko">스킨코치</span>
+        <span class="brand__en">SkinCoach</span>
+      </a>
+      <nav class="nav__links" aria-label="주요 메뉴">
+        <a href="#features">기능</a>
+        <a href="#how">사용법</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn--sm" href="#download" data-track="download_click" data-section="nav">다운로드</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 01 히어로 -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="kicker"><span class="kicker__no">§ 01</span> 내 화장대 기준 스킨케어 코칭</p>
+          <h1 class="hero__title" id="hero-title">제품은 많은데,<br>어떻게 써야 할지<br><mark>모르겠다면</mark></h1>
+          <p class="lead hero__lead"><strong>내가 가진 제품으로 더 똑똑하게.</strong>스킨코치는 새 제품을 파는 앱이 아니에요. 지금 화장대에 있는 제품을 기준으로 생각해요.</p>
+          <div class="cta-row">
+            <a class="btn is-soon" data-store data-track="download_click" data-section="hero">
+              <span class="btn__tag">SOON</span><span data-store-label>App Store 출시 준비 중</span>
+            </a>
+            <a class="link-arrow" href="#how" data-track="howto_click" data-section="hero">어떻게 쓰는지 보기 <span aria-hidden="true">↓</span></a>
+          </div>
+          <ol class="coverlines" aria-label="주요 기능 바로가기">
+            <li><a href="#feature-routine"><span class="coverlines__no">01</span>가진 제품으로 아침·저녁 루틴</a></li>
+            <li><a href="#feature-conflict"><span class="coverlines__no">02</span>사기 전에 30초, 성분 충돌 체크</a></li>
+            <li><a href="#feature-checkin"><span class="coverlines__no">03</span>매일 30초 피부 체크인</a></li>
+          </ol>
+        </div>
+
+        <figure class="hero__fig">
+          <div class="plate">
+            <video data-lazy muted loop playsinline width="800" height="1629"
+                   poster="assets/img/shots/hero-home.webp"
+                   data-webm="assets/video/home.webm" data-mp4="assets/video/home.mp4"
+                   aria-label="스킨코치 홈 화면 영상. 모닝 루틴과 나이트 루틴, 피부 점수, 오늘 피부 상태가 한 화면에 보이고, 아침 루틴 알림을 켜는 장면이 이어져요."></video>
+          </div>
+          <span class="stamp stamp--ink">실제 앱 화면</span>
+          <figcaption><span class="fig-no">FIG. 01</span><span>홈 한 화면에 오늘 할 일 전부</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>레티놀 + AHA/BHA → 번갈아 쓰기</span><i>✳</i>
+        <span>비타민C + 레티놀 → 아침·저녁 나누기</span><i>✳</i>
+        <span>각질 제거 + 각질 제거 → 한 루틴에 하나만</span><i>✳</i>
+        <span>부딪히면 <b class="t-red">빨간색</b>, 괜찮으면 <b class="t-green">초록색</b></span><i>✳</i>
+        <span>새로 사기 전에, 가진 것부터</span><i>✳</i>
+        <span>레티놀 + AHA/BHA → 번갈아 쓰기</span><i>✳</i>
+        <span>비타민C + 레티놀 → 아침·저녁 나누기</span><i>✳</i>
+        <span>각질 제거 + 각질 제거 → 한 루틴에 하나만</span><i>✳</i>
+        <span>부딪히면 <b class="t-red">빨간색</b>, 괜찮으면 <b class="t-green">초록색</b></span><i>✳</i>
+        <span>새로 사기 전에, 가진 것부터</span><i>✳</i>
+      </div>
+    </div>
+
+    <!-- 02 문제 제기 -->
+    <section class="problem" aria-labelledby="problem-title">
+      <div class="wrap problem__grid">
+        <header class="problem__head">
+          <p class="kicker"><span class="kicker__no">§ 02</span> 혹시 이런 적</p>
+          <h2 class="h-display problem__title" id="problem-title">매번<br>이랬죠</h2>
+        </header>
+        <div>
+          <ol class="chat">
+            <li class="chat__msg">
+              <span class="chat__time">밤 11:42</span>
+              <p class="chat__bubble">토너 다음에 세럼이었나, 에센스가 먼저였나?</p>
+            </li>
+            <li class="chat__msg chat__msg--r">
+              <span class="chat__time">밤 11:58</span>
+              <p class="chat__bubble">이 두 개 같이 발라도 되는 거 맞아?</p>
+            </li>
+            <li class="chat__msg">
+              <span class="chat__time">새벽 12:31</span>
+              <p class="chat__bubble">유튜브에서 추천하던데... 내 피부에도 맞을까?</p>
+            </li>
+            <li class="chat__msg chat__msg--r">
+              <span class="chat__time">새벽 1:07</span>
+              <p class="chat__bubble">화장대에 안 쓰는 제품만 쌓여간다</p>
+            </li>
+          </ol>
+          <p class="problem__end"><span class="chat__time">새벽 1:40</span>검색만 하다 하루가 갔어요.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 핵심 기능 -->
+    <section class="sec sec--mint" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker"><span class="kicker__no">§ 03</span> 스킨코치는 다르게 생각해요</p>
+          <h2 class="h-display" id="features-title">내가 가진 제품을<br>기준으로 생각해요</h2>
+        </header>
+
+        <article class="feat feat--a" id="feature-routine" aria-labelledby="f1-title">
+          <div class="feat__text">
+            <span class="feat__no" aria-hidden="true">01</span>
+            <h3 class="feat__title" id="f1-title">보유 제품만 고르면<br>아침·저녁 루틴 완성</h3>
+            <p>화장대에 있는 제품을 체크하면 클렌저부터 선크림까지 바르는 순서와 소요 시간이 나와요.</p>
+            <dl class="spec">
+              <div><dt>고르는 것</dt><dd>화장대 제품 + 집중 케어(미백·트러블 등)</dd></div>
+              <div><dt>나오는 것</dt><dd>STEP별 순서, 단계별 소요 시간, 예상 총 시간</dd></div>
+            </dl>
+            <p class="note">예: 가진 제품 6개로 아침 루틴 6단계, 약 7분 (데모 계정 기준)</p>
+          </div>
+          <figure class="feat__fig">
+            <div class="plate plate--mint">
+              <img src="assets/img/shots/feat-routine.webp" width="800" height="978" loading="lazy" decoding="async"
+                   alt="스킨코치 추천 루틴 화면. 모닝 루틴이 STEP 1 클렌저 30초, STEP 2 토너 1분, STEP 3 세럼 2분 순서로 나와요. 제품명은 가려져 있어요.">
+            </div>
+            <figcaption><span class="fig-no">FIG. 02</span><span>추천 루틴. 바르는 순서대로 STEP이 이어져요.</span></figcaption>
+          </figure>
+        </article>
+
+        <article class="feat feat--b" id="feature-conflict" aria-labelledby="f2-title">
+          <div class="feat__head">
+            <span class="feat__no" aria-hidden="true">02</span>
+            <div class="feat__text">
+              <h3 class="feat__title" id="f2-title">새 제품은 사기 전에<br>성분 충돌 체크</h3>
+              <p>내 화장대 성분과 부딪히면 빨간색, 괜찮으면 초록색. 이유와 대안까지 같이 알려드려요.</p>
+            </div>
+          </div>
+          <div class="versus">
+            <figure class="versus__item versus__item--bad" data-reveal>
+              <div class="plate">
+                <img src="assets/img/shots/feat-conflict.webp" width="800" height="1108" loading="lazy" decoding="async"
+                     alt="성분 충돌 빠른 체크 화면. 빨간 '충돌이 있어요' 카드와 함께, 레티놀과 AHA/BHA 각질제거 성분을 같이 쓰면 자극 위험이 높다는 경고가 보여요.">
+              </div>
+              <span class="stamp stamp--danger">충돌</span>
+              <figcaption><span class="fig-no">FIG. 03</span><span>레티놀 크림이 있는 화장대에 AHA/BHA 필링 제품을 검색했을 때</span></figcaption>
+              <ul class="outcome">
+                <li>왜 부딪히는지 이유를 보여줘요</li>
+                <li>대신 쓸 만한 제품을 추천해요</li>
+              </ul>
+            </figure>
+            <div class="versus__vs" aria-hidden="true">vs</div>
+            <figure class="versus__item versus__item--good" data-reveal>
+              <div class="plate">
+                <img src="assets/img/shots/feat-safe.webp" width="800" height="849" loading="lazy" decoding="async"
+                     alt="성분 충돌 빠른 체크 화면. 초록색 '안전한 조합이에요' 카드와 '화장대에 추가' 버튼이 보여요.">
+              </div>
+              <span class="stamp stamp--safe">안전</span>
+              <figcaption><span class="fig-no">FIG. 04</span><span>같은 화장대에 토너를 검색했을 때</span></figcaption>
+              <ul class="outcome">
+                <li>바로 화장대에 추가할 수 있어요</li>
+              </ul>
+            </figure>
+          </div>
+        </article>
+
+        <article class="feat feat--c" id="feature-checkin" aria-labelledby="f3-title">
+          <figure class="feat__fig">
+            <div class="plate plate--mint">
+              <img src="assets/img/shots/feat-checkin.webp" width="800" height="1493" loading="lazy" decoding="async"
+                   alt="오늘의 피부 체크인 화면. 피부 상태는 트러블, 특이사항은 수면부족과 고스트레스, 미세먼지는 나쁨으로 선택돼 있어요.">
+            </div>
+            <figcaption><span class="fig-no">FIG. 05</span><span>오늘의 피부 체크인</span></figcaption>
+          </figure>
+          <div class="feat__text">
+            <span class="feat__no" aria-hidden="true">03</span>
+            <h3 class="feat__title" id="f3-title">매일 30초 체크인으로<br>오늘 피부 기록</h3>
+            <p>피부 상태, 수면, 스트레스, 미세먼지. 오늘의 컨디션이 홈에 바로 반영돼요.</p>
+            <ul class="tags" aria-label="체크인 항목">
+              <li>피부 상태</li><li>수면 부족</li><li>스트레스</li><li>음주·운동·생리 중</li><li>미세먼지</li>
+            </ul>
+            <figure class="result">
+              <p class="result__label">→ 홈에 바로 반영</p>
+              <div class="plate">
+                <img src="assets/img/shots/feat-checkin-result.webp" width="800" height="133" loading="lazy" decoding="async"
+                     alt="홈 화면의 오늘 피부 카드. '오늘 피부: 트러블, 수면부족·고스트레스'라고 표시돼요.">
+              </div>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 04 사용법 -->
+    <section class="sec" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker"><span class="kicker__no">§ 04</span> 사용법</p>
+          <h2 class="h-display" id="how-title">화장대 올리는 데 1분,<br>루틴 완성까지 3분</h2>
+        </header>
+
+        <div class="ruler" aria-hidden="true">
+          <div><b>0:00 — 1:00</b><span>화장대 올리기</span></div>
+          <div><b>1:00 — 3:00</b><span>루틴 만들기</span></div>
+          <div><b>3:00 —</b><span>오늘부터 시작</span></div>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <p class="step__no">STEP 1</p>
+            <h3 class="step__title">가진 제품을 검색해서 체크</h3>
+            <div class="plate plate--flat">
+              <img src="assets/img/shots/step-1.webp" width="800" height="995" loading="lazy" decoding="async"
+                   alt="제품 추가 화면. 검색 결과에서 제품 3개를 체크했어요. 제품명은 가려져 있어요.">
+            </div>
+          </li>
+          <li class="step">
+            <p class="step__no">STEP 2</p>
+            <h3 class="step__title">지금 고민 선택</h3>
+            <div class="plate plate--flat">
+              <img src="assets/img/shots/step-2.webp" width="800" height="995" loading="lazy" decoding="async"
+                   alt="집중 케어 선택 화면. 미백·톤업, 안티에이징, 주름 케어, 잡티·색소, 탄력 강화, 트러블 케어 중 미백·톤업과 트러블 케어를 골랐어요.">
+            </div>
+          </li>
+          <li class="step">
+            <p class="step__no">STEP 3</p>
+            <h3 class="step__title">클렌저부터 선크림까지 순서 확인</h3>
+            <div class="plate plate--flat">
+              <img src="assets/img/shots/step-3.webp" width="800" height="995" loading="lazy" decoding="async"
+                   alt="추천 루틴 화면. 모닝 루틴과 나이트 루틴 탭, STEP 1 클렌저부터 단계별 소요 시간이 보여요.">
+            </div>
+          </li>
+          <li class="step">
+            <p class="step__no">STEP 4</p>
+            <h3 class="step__title">홈에서 오늘 루틴 시작</h3>
+            <div class="plate plate--flat">
+              <img src="assets/img/shots/step-4.webp" width="800" height="995" loading="lazy" decoding="async"
+                   alt="홈 화면. 모닝 루틴 6단계와 나이트 루틴 4단계가 아이콘으로 나란히 보여요.">
+            </div>
+          </li>
+        </ol>
+        <p class="steps-hint" aria-hidden="true">← 옆으로 넘겨 보세요 →</p>
+      </div>
+    </section>
+
+    <!-- 05 더 많은 기능 -->
+    <section class="sec sec--mint" id="more" aria-labelledby="more-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker"><span class="kicker__no">§ 05</span> 더 많은 기능</p>
+          <h2 class="h-display" id="more-title">그 밖에도<br>이런 걸 해요</h2>
+        </header>
+        <ul class="index-grid">
+          <li class="cell">
+            <span class="cell__no">05.1</span>
+            <div class="cell__img"><img src="assets/img/shots/more-safety.webp" width="800" height="533" loading="lazy" decoding="async" alt="제품 상세의 성분 목록. 성분마다 주의 또는 안전 배지가 붙어 있어요."></div>
+            <h3>성분별 안전도 표시</h3>
+            <p>제품 하나하나 주의·안전 배지로</p>
+          </li>
+          <li class="cell">
+            <span class="cell__no">05.2</span>
+            <div class="cell__img"><img src="assets/img/shots/more-ampm.webp" width="800" height="533" loading="lazy" decoding="async" alt="성분 상호작용 안내. 자극 가능성 주의 표시와 함께 AM/PM로 나누어 사용하는 것을 권장한다는 문구가 보여요."></div>
+            <h3>AM/PM 분리 사용 안내</h3>
+            <p>같이 쓰면 안 되는 조합은 아침·저녁으로 나눠요</p>
+          </li>
+          <li class="cell">
+            <span class="cell__no">05.3</span>
+            <div class="cell__img"><img src="assets/img/shots/more-alarm.webp" width="800" height="533" loading="lazy" decoding="async" alt="알림 설정 화면. 아침 루틴 알림이 켜져 있고 알림 시간은 08:00이에요."></div>
+            <h3>루틴 알림</h3>
+            <p>아침 8시, 저녁 10시. 원하는 시간에</p>
+          </li>
+          <li class="cell">
+            <span class="cell__no">05.4</span>
+            <div class="cell__img"><img src="assets/img/shots/more-calendar.webp" width="800" height="533" loading="lazy" decoding="async" alt="루틴 달성 현황의 월간 캘린더. 루틴을 완료한 날짜 아래에 점이 찍혀 있어요."></div>
+            <h3>달성 캘린더</h3>
+            <p>완료한 날엔 점이 찍혀요</p>
+          </li>
+          <li class="cell">
+            <span class="cell__no">05.5</span>
+            <div class="cell__img"><img src="assets/img/shots/more-cycle.webp" width="800" height="590" loading="lazy" decoding="async" alt="생리 주기 캘린더. 생리기, 여포기, 배란기, 황체기가 색으로 구분돼 있어요."></div>
+            <h3>생리 주기 관리</h3>
+            <p>단계마다 다른 피부에 맞춘 팁</p>
+            <p class="note">주기 단계는 입력한 날짜를 바탕으로 한 예상이고, 팁은 참고용이에요.</p>
+          </li>
+          <li class="cell cell--num">
+            <span class="cell__no">05.6</span>
+            <div class="cell__img" aria-hidden="true">
+              <span class="bignum">3,100+</span>
+              <span class="bignum-cap">PRODUCTS</span>
+            </div>
+            <h3>올리브영 판매 제품 3,100여 개</h3>
+            <p>브랜드·제품명으로 바로 검색</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 06 성분 노트 -->
+    <section class="sec" id="combos" aria-labelledby="combos-title">
+      <div class="wrap">
+        <header class="sec-head">
+          <p class="kicker"><span class="kicker__no">§ 06</span> 성분 노트</p>
+          <h2 class="h-display" id="combos-title">이 조합, 같이 쓰고<br>계셨다면 멈추세요</h2>
+          <p class="lead">따로 쓰면 좋은 성분도 겹치면 자극이 커질 수 있어요.</p>
+        </header>
+
+        <ol class="combo-list">
+          <li class="combo">
+            <div class="combo__eq" aria-hidden="true">
+              <span class="el"><span class="el__no">1a</span><span class="el__name">레티놀</span><span class="el__en">RETINOL</span></span>
+              <span class="combo__op">+</span>
+              <span class="el"><span class="el__no">1b</span><span class="el__name">AHA/<br>BHA</span><span class="el__en">ACIDS</span></span>
+            </div>
+            <div class="combo__body" data-reveal>
+              <h3 class="combo__title">레티놀 + AHA/BHA</h3>
+              <p>둘 다 각질 제거 계열이라 같은 날 겹치면 장벽 손상 위험이 높아져요. 번갈아 쓰는 걸 권해요.</p>
+              <span class="stamp stamp--danger">같은 날 피하기</span>
+            </div>
+          </li>
+          <li class="combo">
+            <div class="combo__eq" aria-hidden="true">
+              <span class="el"><span class="el__no">2a · AM</span><span class="el__name">비타민C</span><span class="el__en">VITAMIN C</span></span>
+              <span class="combo__op">+</span>
+              <span class="el"><span class="el__no">2b · PM</span><span class="el__name">레티놀</span><span class="el__en">RETINOL</span></span>
+            </div>
+            <div class="combo__body" data-reveal>
+              <h3 class="combo__title">비타민C + 레티놀</h3>
+              <p>작용 방식이 달라 함께 쓰면 자극이 생길 수 있어요. 아침엔 비타민C, 저녁엔 레티놀로 나누면 둘 다 챙길 수 있어요.</p>
+              <span class="stamp stamp--danger">아침·저녁 나누기</span>
+            </div>
+          </li>
+          <li class="combo">
+            <div class="combo__eq" aria-hidden="true">
+              <span class="el"><span class="el__no">3a</span><span class="el__name">각질<br>제거</span><span class="el__en">EXFOLIANT</span></span>
+              <span class="combo__op">+</span>
+              <span class="el"><span class="el__no">3b</span><span class="el__name">각질<br>제거</span><span class="el__en">EXFOLIANT</span></span>
+            </div>
+            <div class="combo__body" data-reveal>
+              <h3 class="combo__title">각질 제거 제품 2개 이상</h3>
+              <p>필링 패드, 스크럽, BHA 토너. 이름은 달라도 하는 일은 같아요. 한 루틴에 하나만.</p>
+              <span class="stamp stamp--danger">한 루틴에 하나만</span>
+            </div>
+          </li>
+        </ol>
+
+        <div class="combos__close">
+          <p>외우기 어렵다면 스킨코치에 화장대 제품을 올려두세요. 새 제품을 검색하는 순간 충돌 여부를 색으로 알려드려요.</p>
+          <p class="disclaimer">성분 정보는 참고용이며 개인 피부 특성에 따라 다를 수 있어요. 피부 트러블 시 전문의와 상담하세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 FAQ -->
+    <section class="sec sec--mint" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq__grid">
+        <header class="sec-head">
+          <p class="kicker"><span class="kicker__no">§ 07</span> FAQ</p>
+          <h2 class="h-display" id="faq-title">자주 묻는<br>질문</h2>
+        </header>
+        <div class="faq__list">
+          <details class="qa" data-faq="platform">
+            <summary><span class="qa__no">Q.01</span><span class="qa__q">어떤 기기에서 쓸 수 있나요?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>지금은 iPhone용 iOS 앱으로 준비하고 있어요.</p></div>
+          </details>
+          <details class="qa" data-faq="products">
+            <summary><span class="qa__no">Q.02</span><span class="qa__q">어떤 제품을 검색할 수 있나요?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>올리브영에서 판매 중인 제품 약 3,100개를 브랜드나 제품명으로 검색할 수 있어요.</p></div>
+          </details>
+          <details class="qa" data-faq="analysis">
+            <summary><span class="qa__no">Q.03</span><span class="qa__q">성분 분석은 어떻게 하나요?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>성분 데이터베이스를 기준으로 제품 간 성분 조합을 분석해 자극 위험이 알려진 조합을 알려드려요. 참고용 정보이며 의학적 진단을 대신하지 않아요.</p></div>
+          </details>
+          <details class="qa" data-faq="privacy">
+            <summary><span class="qa__no">Q.04</span><span class="qa__q">내 피부 정보는 어디에 저장되나요?</span><span class="qa__icon" aria-hidden="true"></span></summary>
+            <div class="qa__a"><p>어떤 정보를 수집하고 어디에 저장·전송하는지는 <a href="privacy/">개인정보 처리방침</a>에 정리해 두었어요.</p></div>
+          </details>
+          <!-- TODO(확정 후 추가): 아래 질문은 답이 정해지면 위와 같은 형식으로 넣어주세요.
+               Q. 스킨코치는 무료인가요?            → 가격 정책
+               Q. 안드로이드는 언제 나오나요?        → 출시 계획
+               Q. 목록에 없는 제품은 어떻게 하나요?  → 직접 추가 가능 여부
+               Q. 제품을 추천하면 광고인가요?        → 제휴·광고 여부 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 최종 CTA -->
+    <section class="final" id="download" aria-labelledby="final-title">
+      <div class="wrap">
+        <div class="coupon">
+          <span class="coupon__cut" aria-hidden="true">✂</span>
+          <div>
+            <p class="kicker"><span class="kicker__no">§ 08</span> 다운로드</p>
+            <h2 class="h-display final__title" id="final-title">새로 사기 전에,<br>가진 것부터</h2>
+            <p class="lead">오늘 화장대부터 올려두세요</p>
+            <div class="cta-row">
+              <a class="btn is-soon" data-store data-track="download_click" data-section="final">
+                <span class="btn__tag">SOON</span><span data-store-label>App Store 출시 준비 중</span>
+              </a>
+              <span data-instagram-box hidden>
+                <a class="link-arrow" data-instagram data-track="instagram_click" data-section="final" target="_blank" rel="noopener">인스타그램에서 소식 보기 <span aria-hidden="true">↗</span></a>
+              </span>
+            </div>
+          </div>
+          <div class="coupon__side">
+            <img src="assets/img/logo-s-large.png" alt="" width="373" height="540" loading="lazy">
+            <p>SKINCOACH<br>FOR iPHONE<br>새로 사기 전에, 가진 것부터</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <div class="foot__brand">
+            <img src="assets/img/logo-s.png" alt="" width="83" height="120" loading="lazy">
+            <strong>스킨코치</strong>
+          </div>
+          <p class="foot__slogan">내 피부의 AI 코치, 스킨코치.</p>
+        </div>
+        <dl class="foot__info">
+          <!-- TODO: 운영 주체·사업자 정보 확정 후 수정 -->
+          <div><dt>운영</dt><dd>MediX</dd></div>
+          <div><dt>문의</dt><dd><a href="mailto:skincoach.support@gmail.com">skincoach.support@gmail.com</a></dd></div>
+        </dl>
+        <ul class="foot__links">
+          <li><a href="privacy/">개인정보 처리방침</a></li>
+          <li><a href="terms/">서비스 이용약관</a></li>
+          <li data-instagram-box hidden><a data-instagram data-track="instagram_click" data-section="footer" target="_blank" rel="noopener">인스타그램</a></li>
+        </ul>
+      </div>
+      <div class="foot__legal">
+        <p>스킨코치가 제공하는 성분·루틴 정보는 참고용이며 의학적 진단이나 치료를 대신하지 않습니다.</p>
+        <p>© 2026 SkinCoach. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
